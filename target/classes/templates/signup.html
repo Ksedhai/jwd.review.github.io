@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to CHAT</title>
+</head>
+<body>
+<form action="#" th:action="@{/signup}" method="post">
+  <div id="success-msg" th:if="${signupSuccess}">
+    You successfully signed up! Please continue to the <a id="login-link" th:href="@{/login}">login</a> page.
+  </div>
+  <div id="error-msg" th:if="${signupError}">
+    <span th:text="${signupError}"></span>
+  </div>
+  <label for="username">Username:</label>
+  <input id="username" name="username" type="text">
+  <label for="password">Password:</label>
+  <input id="password" name="password" type="password">
+  <label for="firstName">First Name:</label>
+  <input id="firstName"  name="firstName" type="text">
+  <label for="lastName">Last Name:</label>
+  <input id="lastName" name="lastName" type="text">
+  <input type="submit">
+</form>
+</body>
+</html>
